@@ -1,0 +1,59 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Clarity Hub
+company_name: Clarity Hub, Inc
+email: support@clarityhub.io
+phone_number: 1-855-83-CLAIR
+description: > # this means to ignore newlines until "baseurl:"
+  Engage your customers through integrated chat. Answer questions
+  faster than ever before with AI and machine learning
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.clarityhub.app" # the base hostname & protocol for your site, e.g. http://example.com
+current_url: "https://www.clarityhub.app" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Prod
+# ga_tracking_id: UA-101505101-1
+# Dev
+ga_tracking_id: UA-101505101-2
+
+facebook_username: clarityhub
+twitter_username: clarityhub
+medium_username: clarityhub
+linkedin_username: clarityhub
+
+blog: https://medium.com/@clarityhub
+
+# Build settings
+markdown: kramdown
+theme: minima
+# gems:
+#   - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+sass:
+  load_paths:
+    - _sass
+    - ../node_modules/
+  style: compressed
+compress_html:
+  clippings: all
+  comments: [""]
+  endings: [html, head, body, li, dt, dd, rt, rp, optgroup, option, colgroup, caption, thead, tbody, tfoot, tr, td, th]
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []

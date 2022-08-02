@@ -1,0 +1,15 @@
+{
+  "name": "clarity-hub-refer",
+  "version": "1.0.0",
+  "description": "Referral program for Clarity Hub, Inc!",
+  "main": "index.js",
+  "author": "Ivan Montiel <idmontie@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "bash scripts/start",
+    "fast-start": "bash scripts/fast-start"
+  },
+  "devDependencies": {
+    "colors": "^1.1.2"
+  }
+}

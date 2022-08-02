@@ -1,0 +1,13 @@
+# System files
+.DS_Store
+
+# Build folder
+/build/
+
+# Dependencies
+node_modules
+
+# Cache
+npm-debug.log
+.sass-cache/
+_site/

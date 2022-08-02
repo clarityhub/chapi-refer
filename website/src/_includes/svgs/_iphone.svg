@@ -1,0 +1,21 @@
+<svg width="253px" height="126px" viewBox="0 0 253 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="path-1" x="0" y="0" width="125.071823" height="253" rx="9.450001"></rect>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(-34.000000, -301.000000)">
+            <g id="Preview" transform="translate(34.000000, 301.000000)">
+                <g id="iPhone" transform="translate(126.500000, 63.000000) rotate(90.000000) translate(-126.500000, -63.000000) translate(63.500000, -63.500000)">
+                    <g>
+                        <rect fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="125.071823" height="253" rx="9.450001"></rect>
+                        <rect stroke="#000000" stroke-width="1" x="0.5" y="0.5" width="124.071823" height="252" rx="9.450001"></rect>
+                    </g>
+                    <ellipse id="Home-Button" stroke="#000000" cx="62.5359116" cy="235.598479" rx="7.31698895" ry="7.22519084"></ellipse>
+                    <rect id="Screen" stroke="#000000" x="9.5" y="31.4007634" width="105" height="190"></rect>
+                    <rect id="Speaker" fill="#000000" x="52.7646754" y="15.9332061" width="19.5424724" height="1.93129771" rx="0.965648855"></rect>
+                    <ellipse id="Camera" fill="#000000" cx="43.9705628" cy="16.898855" rx="1" ry="1"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

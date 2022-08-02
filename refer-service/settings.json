@@ -1,0 +1,30 @@
+{
+  "development": {
+    "port": "3000",
+    "domain": "clarityhub.app",
+    "database": {
+      "username": "",
+      "password": "",
+      "database": "clarityhub_refer_development",
+      "host": "postgres",
+      "dialect": "postgres"
+    },
+    "mailchimp": {
+      "apiKey": "",
+      "listId": ""
+    },
+    "sparkpost": {
+      "apiKey": ""
+    }
+  },
+  "test": {
+    "port": "3001",
+    "database": {
+      "username": "postgres",
+      "password": "postgres",
+      "database": "clarityhub_refer_test",
+      "host": "postgres",
+      "dialect": "postgres"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<script src="/assets/scripts/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+
+{% if page.custom_js %}
+  {% for js_file in page.custom_js %}
+  <script src="/assets/scripts/{{ js_file }}.js" type="text/javascript"></script>
+  {% endfor %}
+{% endif %}
+{% if page.custom_js_url %}
+  {% for js_file in page.custom_js_url %}
+  <script type="application/javascript" src={{js_file | liquify}}></script>
+  {% endfor %}
+{% endif %}

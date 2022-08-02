@@ -1,0 +1,55 @@
+
+<div class="footer">
+  <div class="footer__info footer__grid">
+    <div class="footer__info__contact footer__grid__column footer__grid__column--2x">
+      <div class="footer__info__logo">
+        <span>{{ site.title }}</span>
+      </div>
+
+      <ul>
+        <li><a href="tel:{{ site.phone_number }}">{{ site.phone_number }}</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__addtl">
+    <div class="footer__addtl__container">
+      <div class="footer__addtl__copy">
+        &copy; 2017 Clarity Hub, Inc. All Rights Reserved.
+      </div>
+
+      <div class="footer__addtl__links">
+        <ul>
+          <li><a href="/terms/#privacy">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__addtl__social">
+        <ul>
+          <li>
+            <a class="fb" href="https://facebook.com/{{ site.facebook_username }}" target="tab" rel="noopener noreferrer">
+              {% include svgs/_facebook.svg %}
+            </a>
+          </li>
+          <li>
+            <a class="tw" href="https://twitter.com/{{ site.twitter_username }}" target="tab" rel="noopener noreferrer">
+              {% include svgs/_twitter.svg %}
+            </a>
+          </li>
+          <li>
+            <a class="medium" href="https://medium.com/@{{ site.medium_username }}" target="tab" rel="noopener noreferrer">
+              {% include svgs/_medium.svg %}
+            </a>
+          </li>
+          <li>
+            <a class="linkedin" href="https://linkedin.com/in/{{ site.linkedin_username }}" target="tab" rel="noopener noreferrer">
+              {% include svgs/_linkedin.svg %}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

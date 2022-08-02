@@ -1,0 +1,21 @@
+---
+layout: empty
+custom_js:
+- home
+---
+<div class="home__content">
+    <div id='site-url' data-site-url={{ site.current_url }}/>
+
+    <form method='post' action='https://api.clarityhub.app/refer' id='refer__email-form'>
+      <div>
+        <input id='email' class='email-input' name='email' type='email' placeholder='email' value='' />
+        <label class='email-label' htmlFor='email'>
+        Email
+      </label>
+        <button type='submit'>Sign Up</button>
+      </div>
+      <span id='refer__error'></span>
+    </form>
+</div>
+
+{% include footer.html %}

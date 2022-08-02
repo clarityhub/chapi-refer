@@ -1,0 +1,37 @@
+version: "2"
+services:
+  nginx:
+    build: ./nginx
+    links:
+      - "website:website"
+      - "refer-service:refer-service"
+    ports:
+      - "80:80"
+      - "443:443"
+
+  postgres:
+    build: .
+    container_name: clarityhub-postgres
+    environment:
+      POSTGRES_PASSWORD: ""
+      POSTGRES_USER: postgres
+    logging:
+      driver: none
+
+  refer-service:
+    build: ./refer-service
+    depends_on:
+      - postgres
+    ports:
+      - "8080:3000"
+    volumes:
+      - "./refer-service:/app"
+    environment:
+      - WATCH=1
+  
+  website:
+    build: ./website
+    ports:
+      - "8081:8080"
+    volumes:
+      - "./website:/srv/jekyll"

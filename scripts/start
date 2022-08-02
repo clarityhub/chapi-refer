@@ -1,0 +1,39 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+set -e
+
+function usage {
+   cat << EOF
+Usage: yarn start [-- [-n] [-s]]
+
+-n – No interaction (optional)
+-s – Skip yarn installs (optional)
+EOF
+   exit 1
+}
+
+if [ "$1" == "-h" ]; then
+  usage;
+fi
+
+if [ "$1" != "-n" ]; then
+  # Interaction requested
+  while true; do
+    read -p $'Do you want to remake the postgres database?\n\nThis will re-run the init script, but will \e[31mdestroy all your postgres data\e[0m.\n\n[Y]es/[N]o: ' yn
+    case $yn in
+      [Yy]* ) docker rmi -f clarityhub-postgres; docker-compose stop postgres; docker-compose rm postgres; docker-compose build --no-cache postgres; break;;
+      [Nn]* ) break;;
+      * ) echo "Please answer [y]es or [n]o.";;
+    esac
+  done
+fi
+
+node ./createSettings.js && \
+  bash ./create-ssl && \
+  (cd ../refer-service && yarn install) && \
+  (
+    cd .. && \
+    docker-compose build && \
+    docker-compose up \
+  )

@@ -1,0 +1,125 @@
+/*
+Colors
+
+Styleguide 1
+*/
+
+/*
+Brand Colors
+
+Standard Clairvoyance colors
+
+$clair-primary -   Main color of Clairvoyance
+$clair-secondary - Accent color, should be used to call attention
+$clair-dark -      Dark color
+$clair-light -     Basically white
+$clair-wash -      When you need a faded white
+$clair-gray -      Normal background color
+$clair-coal -      Dark text (but you know, gray)
+$clair-success -   Success colors
+$clair-danger -    Danger colors
+
+markup:
+<div style="background: {$modifiers};" class="styleguide-color">{$modifiers}</div>
+
+Styleguide 1.1
+*/
+$clair-primary:   #FF6A5C;
+$clair-secondary: #7AFFC6;
+$clair-dark:      #322439;
+$clair-light:     #FFFFFF;
+$clair-wash:      #FDFDFD;
+$clair-gray:      #C2C2C2;
+$clair-coal:      #444;
+$clair-success:   #7AC29A;
+$clair-danger:    #DD2476;
+$clair-warning:    #F3EF10;
+
+/*
+Gradient Colors
+
+Clairvoyance standard gradients for use on backgrounds, text, icons, overlays, you name it
+
+.clair-gradient-primary - m
+.clair-gradient-primary-translucent - For use over images
+.clair-gradient-secondary - a
+.clair-gradient-dark - b
+
+markup:
+<div class="styleguide-color {$modifiers}">{$modifiers}</div>
+
+Styleguide 1.2
+*/
+$clair-gradient-primary-from:   #DD2476;
+$clair-gradient-primary-to:     #FF512F;
+$clair-gradient-secondary-from: #0AAE77;
+$clair-gradient-secondary-to:   #7AFFC6;
+$clair-gradient-dark-from:      #322439;
+$clair-gradient-dark-to:        #3E3344;
+
+$clair-gradient-primary-map: (
+  degree: -104deg,
+  from: $clair-gradient-primary-from,
+  fromPercent: 16%,
+  to: $clair-gradient-primary-to,
+  toPercent: 95%
+);
+$clair-gradient-primary-translucent-map: (
+  degree: -104deg,
+  from: transparentize($clair-gradient-primary-from, 1-0.65),
+  fromPercent: 16%,
+  to: transparentize($clair-gradient-primary-to, 1-0.65),
+  toPercent: 95%
+);
+$clair-gradient-secondary-map: (
+  degree: -180deg,
+  from: $clair-gradient-secondary-from,
+  fromPercent: 0%,
+  to: $clair-gradient-secondary-to,
+  toPercent: 100%
+);
+$clair-gradient-dark-map: (
+  degree: -180deg,
+  from: $clair-gradient-dark-from,
+  fromPercent: 2%,
+  to: $clair-gradient-dark-to,
+  toPercent: 100%
+);
+
+@function background-gradient($map) {
+  @return linear-gradient(
+    map-get($map, 'degree'),
+    map-get($map, 'from') map-get($map, 'fromPercent'),
+    map-get($map, 'to') map-get($map, 'toPercent')
+  );
+}
+
+$clair-gradient-primary: background-gradient($clair-gradient-primary-map);
+$clair-gradient-primary-translucent: background-gradient($clair-gradient-primary-translucent-map);
+$clair-gradient-secondary: background-gradient($clair-gradient-secondary-map);
+$clair-gradient-dark: background-gradient($clair-gradient-dark-map);
+
+%clair-gradient-primary {
+  background-image: $clair-gradient-primary;
+}
+
+%clair-gradient-primary-translucent {
+  background-image: $clair-gradient-primary-translucent;
+}
+
+%clair-gradient-secondary {
+  background-image: $clair-gradient-secondary;
+}
+
+%clair-gradient-dark {
+  background-image: $clair-gradient-dark;
+}
+
+
+$gutter:    8px;
+$gutter-2x: 2 * $gutter;
+$gutter-4x: 4 * $gutter;
+
+$fast: 0.1s;
+$slow: 4 * $fast;
+

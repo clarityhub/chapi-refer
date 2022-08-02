@@ -1,0 +1,27 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+
+# Create SSL certs so that we can access the app locally through
+# HTTPS.
+
+if [ ! -f ../nginx/cert.crt ]; then
+  # TODO make the DNS records generated from the ../services.js file
+  echo -e " ⚠️\t\x1B[33mCreating SSL Cert\x1B[39m"
+  openssl req \
+    -x509 \
+    -nodes \
+    -days 365 \
+    -newkey rsa:2048 \
+    -subj "/C=US/ST=Arizona/L=Phoenix/O=Dis/CN=clarityhub.app" \
+    -reqexts SAN \
+    -extensions SAN \
+    -config <(cat /etc/ssl/openssl.cnf \
+        <(printf "\n[SAN]\nsubjectAltName=\
+DNS:clarityhub.app,\
+DNS:www.clarityhub.app,\
+DNS:api.clarityhub.app\
+      ")) \
+    -keyout ../nginx/cert.key \
+    -out ../nginx/cert.crt
+fi
